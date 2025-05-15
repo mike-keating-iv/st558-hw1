@@ -1,0 +1,54 @@
+---
+title: "Data Science Intro"
+format: html
+editor: visual
+---
+
+# Section 1: What is a Data Scientist?
+
+I think being a data scientist is about utilizing statistics, mathematics, and programming to deliver insights about a given set of data. A not-insignificant component of this is gathering and cleaning the data itself, as good data doesn't always grow on trees.
+
+Obviously, there is a lot of overlap between data scientists and statisticians. Both use stats and math to make inferences and/or predictions about data. My understanding is that data scientists may have a more broad set of skills and exist at the intersection of computer science, math, and stats. However, I am sure that there are many statisticians that fill similar roles as data scientists and there is likely a ton of overlap.
+
+As for myself, I am a different, third thing. In my career I am a bit of a generalist, I work in a materials testing lab and my day to day activities range from mechanical engineering, materials science, lab automation (scripting), and database management. I've performed some basic reports on root cause analysis and ANOVA of various mechanical properties, but don't typically answer questions that require more sophisticated modeling or analysis. As I wear many hats, I'm looking forward to making my data science and stats skills more robust.
+
+# Section 2: R Chunk
+
+First, let's store our data into a variable named 'y'.
+
+```{r}
+#| echo: false
+y <- density(iris$Petal.Width)
+
+```
+
+Let's learn a bit more about the structure of our object.
+
+We can output the class of an object by using the class() function.
+
+```{r}
+#| echo: false
+print("The class of our y variable:")
+class(y)
+
+
+```
+
+From the above output we learn that our variable is of the "density" class, which is not shocking since it was created using the function. From Rdocumentation, we know that this class is "an S4 class containing a list of grids which describe the density of individuals / clusters of a population. The list contains one grid (data.frame) for each strata.".
+
+In R, the str() function provides us with a handy way to learn more about an object or variable. We can also learn the type using typeof()
+
+```{r}
+#| echo: false
+print("Structure:")
+str(y)
+print("Type:")
+typeof(y)
+```
+
+Finally, we can generate a simple plot using plot().
+
+```{r}
+#| echo: false
+plot(y)
+```
